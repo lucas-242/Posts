@@ -1,7 +1,7 @@
 import 'package:reddit_posts/core/connections/connection.dart';
 import 'package:reddit_posts/models/post.dart';
 import 'package:reddit_posts/repositories/post/post_repository.dart';
-import 'package:reddit_posts/repositories/post/reddit/models/reddit_post.dart';
+import 'package:reddit_posts/repositories/post/reddit/models/reddit_response.dart';
 
 final class RedditPostRepository implements PostRepository {
   RedditPostRepository(this._connection);
@@ -11,10 +11,7 @@ final class RedditPostRepository implements PostRepository {
   @override
   Future<List<Post>> get() async {
     final response = await _connection.get(_apiUrl);
-    final result = List<Post>.from(response.json
-        .map((json) => RedditPost.fromJson(json))
-        .map((p) => p.toPost()));
-    return result;
+    return RedditResponse.fromJson(response.json).data.posts;
   }
 
   @override

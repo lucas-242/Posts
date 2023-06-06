@@ -7,14 +7,20 @@ part of 'reddit_post.dart';
 // **************************************************************************
 
 RedditPost _$RedditPostFromJson(Map<String, dynamic> json) => RedditPost(
-      kind: json['kind'] as String?,
-      data: json['data'] == null
-          ? null
-          : RedditPostData.fromJson(json['data'] as Map<String, dynamic>),
+      author: json['author'] as String?,
+      numComments: json['num_comments'] as int?,
+      title: json['title'] as String?,
+      ups: json['ups'] as int?,
+      created: (json['created'] as num?)?.toDouble(),
+      createdUtc: (json['createdUtc'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$RedditPostToJson(RedditPost instance) =>
     <String, dynamic>{
-      'kind': instance.kind,
-      'data': instance.data,
+      'author': instance.author,
+      'title': instance.title,
+      'ups': instance.ups,
+      'created': instance.created,
+      'createdUtc': instance.createdUtc,
+      'num_comments': instance.numComments,
     };

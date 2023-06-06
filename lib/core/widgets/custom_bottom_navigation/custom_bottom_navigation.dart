@@ -20,13 +20,13 @@ class CustomBottomNavigation extends StatelessWidget {
           BottomNavigationButton(
             onTap: () => onTap(0),
             icon: Icons.home,
-            label: 'Home',
+            label: AppLocalizations.current.home.capitalize(),
             isSelected: currentPage == 0,
           ),
           BottomNavigationButton(
             onTap: () => onTap(1),
-            icon: Icons.flag,
-            label: AppLocalizations.current.services.capitalize(),
+            icon: Icons.language,
+            label: AppLocalizations.current.languages.capitalize(),
             isSelected: currentPage == 1,
           ),
         ],

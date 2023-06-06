@@ -1,17 +1,25 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:reddit_posts/models/post.dart';
-import 'package:reddit_posts/repositories/post/reddit/models/reddit_post_data.dart';
 
 part 'reddit_post.g.dart';
 
 @JsonSerializable()
 final class RedditPost {
-  final String? kind;
-  final RedditPostData? data;
+  final String? author;
+  final String? title;
+  final int? ups;
+  final double? created;
+  final double? createdUtc;
+  @JsonKey(name: 'num_comments')
+  final int? numComments;
 
   RedditPost({
-    required this.kind,
-    required this.data,
+    required this.author,
+    required this.numComments,
+    required this.title,
+    required this.ups,
+    required this.created,
+    required this.createdUtc,
   });
 
   factory RedditPost.fromJson(Map<String, dynamic> json) =>
@@ -20,12 +28,12 @@ final class RedditPost {
   Map<String, dynamic> toJson() => _$RedditPostToJson(this);
 
   Post toPost() => Post(
-        title: data?.title ?? '',
-        author: data?.authorFullname ?? '',
-        ups: data?.ups ?? 0,
-        commentsQuantity: data?.numComments ?? 0,
-        created: data?.createdUtc != null
-            ? DateTime.fromMillisecondsSinceEpoch(data!.createdUtc)
+        title: title ?? '',
+        author: author ?? '',
+        ups: ups ?? 0,
+        commentsQuantity: numComments ?? 0,
+        created: createdUtc != null
+            ? DateTime.fromMillisecondsSinceEpoch(createdUtc!.toInt())
             : DateTime.now(),
       );
 }

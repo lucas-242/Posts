@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reddit_posts/core/widgets/custom_bottom_navigation/custom_bottom_navigation.dart';
+import 'package:reddit_posts/features/home/pages/home_page.dart';
 
 import 'app_cubit.dart';
 
@@ -64,7 +65,7 @@ class _AppShellState extends State<AppShell> {
     final index = context.read<AppCubit>().state;
     switch (index) {
       case 0:
-        return Container(color: Colors.green);
+        return const HomePage();
       case 1:
         return Container(color: Colors.blue);
       default:
