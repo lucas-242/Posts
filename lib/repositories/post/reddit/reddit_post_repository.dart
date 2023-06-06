@@ -1,0 +1,37 @@
+import 'package:reddit_posts/core/connections/connection.dart';
+import 'package:reddit_posts/models/post.dart';
+import 'package:reddit_posts/repositories/post/post_repository.dart';
+import 'package:reddit_posts/repositories/post/reddit/models/reddit_post.dart';
+
+final class RedditPostRepository implements PostRepository {
+  RedditPostRepository(this._connection);
+  final Connection _connection;
+  final String _apiUrl = 'https://api.reddit.com/r/artificial/hot';
+
+  @override
+  Future<List<Post>> get() async {
+    final response = await _connection.get(_apiUrl);
+    final result = List<Post>.from(response.json
+        .map((json) => RedditPost.fromJson(json))
+        .map((p) => p.toPost()));
+    return result;
+  }
+
+  @override
+  Future<Post> create() {
+    // TODO: implement create
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> delete() {
+    // TODO: implement delete
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> update() {
+    // TODO: implement update
+    throw UnimplementedError();
+  }
+}
