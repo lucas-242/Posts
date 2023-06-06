@@ -1,5 +1,5 @@
 import 'package:reddit_posts/core/connections/connection.dart';
-import 'package:reddit_posts/models/post.dart';
+import 'package:reddit_posts/core/models/post.dart';
 import 'package:reddit_posts/repositories/post/post_repository.dart';
 import 'package:reddit_posts/repositories/post/reddit/models/reddit_response.dart';
 

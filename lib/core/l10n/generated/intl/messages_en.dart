@@ -24,11 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "by": MessageLookupByLibrary.simpleMessage("By"),
         "comments": MessageLookupByLibrary.simpleMessage("Comments"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "errorToLoadData": MessageLookupByLibrary.simpleMessage(
             "Error to load data from the API :("),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "languages": MessageLookupByLibrary.simpleMessage("languages"),
         "listsOfPosts": MessageLookupByLibrary.simpleMessage("List of Posts"),
+        "portuguese": MessageLookupByLibrary.simpleMessage("Portuguese"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Select a Language"),
         "upvotes": MessageLookupByLibrary.simpleMessage("Upvotes")
       };
 }

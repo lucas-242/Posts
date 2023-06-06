@@ -70,6 +70,16 @@ class AppLocalizations {
     );
   }
 
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Error to load data from the API :(`
   String get errorToLoadData {
     return Intl.message(
@@ -105,6 +115,36 @@ class AppLocalizations {
     return Intl.message(
       'List of Posts',
       name: 'listsOfPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Portuguese`
+  String get portuguese {
+    return Intl.message(
+      'Portuguese',
+      name: 'portuguese',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a Language`
+  String get selectLanguage {
+    return Intl.message(
+      'Select a Language',
+      name: 'selectLanguage',
       desc: '',
       args: [],
     );

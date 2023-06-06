@@ -1,9 +1,13 @@
 {
   "by": "By",
   "comments": "Comments",
+  "english": "English",
   "errorToLoadData": "Error to load data from the API :(",
   "home": "Home",
   "languages": "languages",
   "listsOfPosts": "List of Posts",
+  "profile": "Profile",
+  "portuguese": "Portuguese",
+  "selectLanguage": "Select a Language",
   "upvotes": "Upvotes"
 }

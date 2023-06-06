@@ -1,4 +1,4 @@
-import 'package:reddit_posts/models/post.dart';
+import 'package:reddit_posts/core/models/post.dart';
 
 abstract interface class PostRepository {
   Future<List<Post>> get();

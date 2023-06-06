@@ -1,9 +1,13 @@
 {
   "by": "Por",
   "comments": "Comentários",
+  "english": "Inglês",
   "errorToLoadData": "Erro para ler os dados da API :(",
   "home": "Ínicio",
   "languages": "Idiomas",
   "listsOfPosts": "Lista de Postagens",
+  "profile": "Perfil",
+  "portuguese": "Português",
+  "selectLanguage": "Selecione um Idioma",
   "upvotes": "Votos Positivos"
 }
