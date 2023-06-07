@@ -28,6 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorToLoadData": MessageLookupByLibrary.simpleMessage(
             "Error to load data from the API :("),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "inactivityBody":
+            MessageLookupByLibrary.simpleMessage("Come back for us :)"),
+        "inactivityTitle":
+            MessageLookupByLibrary.simpleMessage("You are inactive"),
         "languages": MessageLookupByLibrary.simpleMessage("languages"),
         "listsOfPosts": MessageLookupByLibrary.simpleMessage("List of Posts"),
         "portuguese": MessageLookupByLibrary.simpleMessage("Portuguese"),

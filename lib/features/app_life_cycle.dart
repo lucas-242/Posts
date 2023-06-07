@@ -2,16 +2,23 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reddit_posts/core/l10n/generated/l10n.dart';
+import 'package:reddit_posts/core/models/app_notification.dart';
+import 'package:reddit_posts/features/home/cubit/home_cubit.dart';
+import 'package:reddit_posts/services/notification_service/notification_service.dart';
 
 class AppLifeCycle extends StatefulWidget {
   const AppLifeCycle({
     super.key,
     required this.child,
     this.maxInactivityTime = 20000,
+    required this.notificationService,
   });
 
   final Widget child;
   final int maxInactivityTime;
+  final NotificationService notificationService;
 
   @override
   State<AppLifeCycle> createState() => _AppLifeCycleState();
@@ -21,12 +28,22 @@ class _AppLifeCycleState extends State<AppLifeCycle>
     with WidgetsBindingObserver {
   Timer? _screenInactivityTimer;
   DateTime? _pauseTime;
+  bool _isNotificationCallback = false;
 
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(this);
+    widget.notificationService
+        .initialize(notificationCallback: _onNotificationCallback);
     super.initState();
   }
+
+  Future<void> _onNotificationCallback() async {
+    _isNotificationCallback = true;
+    await _refreshPosts();
+  }
+
+  Future<void> _refreshPosts() => context.read<HomeCubit>().onRefresh();
 
   @override
   void didUpdateWidget(AppLifeCycle oldWidget) {
@@ -44,8 +61,12 @@ class _AppLifeCycleState extends State<AppLifeCycle>
 
   void _callPushNotification() {
     _screenInactivityTimer?.cancel();
-    //TODO: Call push notification
-    print('timed out');
+    widget.notificationService.showNotification(
+      AppNotification(
+        title: AppLocalizations.current.inactivityTitle,
+        body: AppLocalizations.current.inactivityBody,
+      ),
+    );
   }
 
   @override
@@ -75,10 +96,23 @@ class _AppLifeCycleState extends State<AppLifeCycle>
     }
   }
 
-  void _onAppResumed() {
+  Future<void> _onAppResumed() async {
+    await _handleNotificationCallback();
     _initTimer();
+    _isNotificationCallback = false;
     if (_hasExceededInactivityTime()) {
       _callPushNotification();
+    }
+  }
+
+  Future<void> _handleNotificationCallback() async {
+    if (!_isNotificationCallback) {
+      final cubit = context.read<HomeCubit>();
+
+      if (cubit.state is HomeLoadingState) {
+        await Future.delayed(const Duration(seconds: 1));
+        _handleNotificationCallback();
+      }
     }
   }
 

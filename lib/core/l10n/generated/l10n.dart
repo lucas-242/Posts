@@ -100,6 +100,26 @@ class AppLocalizations {
     );
   }
 
+  /// `You are inactive`
+  String get inactivityTitle {
+    return Intl.message(
+      'You are inactive',
+      name: 'inactivityTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Come back for us :)`
+  String get inactivityBody {
+    return Intl.message(
+      'Come back for us :)',
+      name: 'inactivityBody',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `languages`
   String get languages {
     return Intl.message(

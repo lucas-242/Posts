@@ -4,6 +4,8 @@
   "english": "Inglês",
   "errorToLoadData": "Erro para ler os dados da API :(",
   "home": "Ínicio",
+  "inactivityTitle": "Você está inativo",
+  "inactivityBody": "Volta pra gente :)",
   "languages": "Idiomas",
   "listsOfPosts": "Lista de Postagens",
   "profile": "Perfil",

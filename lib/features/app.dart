@@ -8,14 +8,17 @@ import 'package:reddit_posts/features/app_life_cycle.dart';
 import 'package:reddit_posts/features/app_shell.dart';
 import 'package:reddit_posts/features/home/home.dart';
 import 'package:reddit_posts/repositories/post_repository/post_repository.dart';
+import 'package:reddit_posts/services/notification_service/notification_service.dart';
 
 class App extends StatelessWidget {
   const App({
     super.key,
     required this.postRepository,
+    required this.notificationService,
   });
 
   final PostRepository postRepository;
+  final NotificationService notificationService;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +28,7 @@ class App extends StatelessWidget {
         BlocProvider<HomeCubit>(create: (_) => HomeCubit(postRepository))
       ],
       child: AppLifeCycle(
+        notificationService: notificationService,
         child: MaterialApp(
           title: 'Posts',
           debugShowCheckedModeBanner: false,
