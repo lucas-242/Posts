@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:reddit_posts/repositories/post/reddit/models/reddit_post.dart';
+import 'package:reddit_posts/repositories/post_repository/reddit/models/reddit_post.dart';
 
 part 'reddit_response_children.g.dart';
 

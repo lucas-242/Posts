@@ -1,7 +1,7 @@
 import 'package:reddit_posts/core/connections/connection.dart';
 import 'package:reddit_posts/core/models/post.dart';
-import 'package:reddit_posts/repositories/post/post_repository.dart';
-import 'package:reddit_posts/repositories/post/reddit/models/reddit_response.dart';
+import 'package:reddit_posts/repositories/post_repository/post_repository.dart';
+import 'package:reddit_posts/repositories/post_repository/reddit/models/reddit_response.dart';
 
 final class RedditPostRepository implements PostRepository {
   RedditPostRepository(this._connection);

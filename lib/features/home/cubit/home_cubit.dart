@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:reddit_posts/core/models/post.dart';
-import 'package:reddit_posts/repositories/post/post_repository.dart';
+import 'package:reddit_posts/repositories/post_repository/post_repository.dart';
 
 part 'home_state.dart';
 
