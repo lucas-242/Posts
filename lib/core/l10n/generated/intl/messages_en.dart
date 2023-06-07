@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select a Language"),
+        "takePicture": MessageLookupByLibrary.simpleMessage("Take a Picture"),
         "upvotes": MessageLookupByLibrary.simpleMessage("Upvotes")
       };
 }

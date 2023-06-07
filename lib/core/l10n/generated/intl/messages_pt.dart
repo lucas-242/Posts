@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Perfil"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Selecione um Idioma"),
+        "takePicture": MessageLookupByLibrary.simpleMessage("Bater uma foto"),
         "upvotes": MessageLookupByLibrary.simpleMessage("Votos Positivos")
       };
 }

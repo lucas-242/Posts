@@ -170,6 +170,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Take a Picture`
+  String get takePicture {
+    return Intl.message(
+      'Take a Picture',
+      name: 'takePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Upvotes`
   String get upvotes {
     return Intl.message(

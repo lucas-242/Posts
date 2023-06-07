@@ -7,6 +7,7 @@ import 'package:reddit_posts/features/app_cubit.dart';
 import 'package:reddit_posts/features/app_life_cycle.dart';
 import 'package:reddit_posts/features/app_shell.dart';
 import 'package:reddit_posts/features/home/home.dart';
+import 'package:reddit_posts/features/profile/cubit/profile_cubit.dart';
 import 'package:reddit_posts/repositories/post_repository/post_repository.dart';
 import 'package:reddit_posts/services/notification_service/notification_service.dart';
 
@@ -25,7 +26,8 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AppCubit>(create: (_) => AppCubit()),
-        BlocProvider<HomeCubit>(create: (_) => HomeCubit(postRepository))
+        BlocProvider<HomeCubit>(create: (_) => HomeCubit(postRepository)),
+        BlocProvider<ProfileCubit>(create: (_) => ProfileCubit()),
       ],
       child: AppLifeCycle(
         notificationService: notificationService,
