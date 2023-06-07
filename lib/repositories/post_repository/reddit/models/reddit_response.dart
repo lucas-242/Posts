@@ -5,8 +5,6 @@ part 'reddit_response.g.dart';
 
 @JsonSerializable()
 final class RedditResponse {
-  final String kind;
-  final RedditResponseData data;
 
   RedditResponse({
     required this.kind,
@@ -15,6 +13,8 @@ final class RedditResponse {
 
   factory RedditResponse.fromJson(Map<String, dynamic> json) =>
       _$RedditResponseFromJson(json);
+  final String kind;
+  final RedditResponseData data;
 
   Map<String, dynamic> toJson() => _$RedditResponseToJson(this);
 }

@@ -4,13 +4,13 @@ import 'package:reddit_posts/core/l10n/generated/l10n.dart';
 import 'package:reddit_posts/core/widgets/custom_bottom_navigation/widgets/bottom_navigation_button.dart';
 
 class CustomBottomNavigation extends StatelessWidget {
-  final int currentPage;
-  final void Function(int) onTap;
   const CustomBottomNavigation({
     Key? key,
     this.currentPage = 0,
     required this.onTap,
   }) : super(key: key);
+  final int currentPage;
+  final void Function(int) onTap;
 
   @override
   Widget build(BuildContext context) {

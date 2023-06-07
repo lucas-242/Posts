@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 extension TypographyExtension on BuildContext {
   ThemeData get _theme => Theme.of(this);
   TextTheme get _textTheme => _theme.textTheme;
-  ColorScheme get _colors => _theme.colorScheme;
 
   TextStyle? get headlineLarge => _textTheme.headlineLarge;
   TextStyle? get headlineMedium => _textTheme.headlineMedium;

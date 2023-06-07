@@ -5,13 +5,6 @@ part 'reddit_post.g.dart';
 
 @JsonSerializable()
 final class RedditPost {
-  final String? author;
-  final String? title;
-  final int? ups;
-  final double? created;
-  final double? createdUtc;
-  @JsonKey(name: 'num_comments')
-  final int? numComments;
 
   RedditPost({
     required this.author,
@@ -24,6 +17,13 @@ final class RedditPost {
 
   factory RedditPost.fromJson(Map<String, dynamic> json) =>
       _$RedditPostFromJson(json);
+  final String? author;
+  final String? title;
+  final int? ups;
+  final double? created;
+  final double? createdUtc;
+  @JsonKey(name: 'num_comments')
+  final int? numComments;
 
   Map<String, dynamic> toJson() => _$RedditPostToJson(this);
 

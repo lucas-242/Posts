@@ -7,9 +7,6 @@ part 'reddit_response_data.g.dart';
 
 @JsonSerializable()
 final class RedditResponseData {
-  final String? after;
-  final String? before;
-  final List<RedditResponseChildren>? children;
 
   RedditResponseData({
     this.after,
@@ -19,6 +16,9 @@ final class RedditResponseData {
 
   factory RedditResponseData.fromJson(Map<String, dynamic> json) =>
       _$RedditResponseDataFromJson(json);
+  final String? after;
+  final String? before;
+  final List<RedditResponseChildren>? children;
 
   Map<String, dynamic> toJson() => _$RedditResponseDataToJson(this);
 

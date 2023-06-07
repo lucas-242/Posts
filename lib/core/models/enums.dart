@@ -4,8 +4,9 @@ enum AppPage {
   home(0),
   profile(1);
 
-  final int value;
   const AppPage(this.value);
+
+  final int value;
 
   static AppPage fromIndex(int value) {
     for (AppPage environment in AppPage.values) {

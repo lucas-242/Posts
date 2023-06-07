@@ -1,9 +1,4 @@
 final class Post {
-  final String title;
-  final String author;
-  final int ups;
-  final int commentsQuantity;
-  final DateTime created;
 
   Post({
     required this.title,
@@ -12,4 +7,9 @@ final class Post {
     required this.commentsQuantity,
     required this.created,
   });
+  final String title;
+  final String author;
+  final int ups;
+  final int commentsQuantity;
+  final DateTime created;
 }
