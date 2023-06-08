@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reddit_posts/core/l10n/generated/l10n.dart';
 import 'package:reddit_posts/core/models/enums.dart';
 import 'package:reddit_posts/core/widgets/custom_bottom_navigation/custom_bottom_navigation.dart';
 import 'package:reddit_posts/features/home/pages/home_page.dart';
+import 'package:reddit_posts/features/post/pages/post_form_page.dart';
 import 'package:reddit_posts/features/profile/pages/profile_page.dart';
 
 import 'app_cubit.dart';
@@ -29,21 +31,23 @@ class _AppShellState extends State<AppShell> {
         onTap: (index) => cubit.changePage(AppPage.fromIndex(index)),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: Align(
-      //   alignment: Alignment.bottomCenter,
-      //   heightFactor: 1.5,
-      //   child: DecoratedBox(
-      //     decoration: BoxDecoration(
-      //       border: Border.all(color: Colors.white, width: 4),
-      //       shape: BoxShape.circle,
-      //     ),
-      //     child: FloatingActionButton(
-      //       onPressed: _onTapFloatingActionButton,
-      //       tooltip: AppLocalizations.current.newService,
-      //       child: Icon(cubit.isAddServicePage ? Icons.close : Icons.add),
-      //     ),
-      //   ),
-      // ),
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        heightFactor: 1.5,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.white, width: 4),
+            shape: BoxShape.circle,
+          ),
+          child: FloatingActionButton(
+            onPressed: _onTapFloatingActionButton,
+            tooltip: AppLocalizations.current.addPost,
+            child: Icon(
+              cubit.state.page == AppPage.addPost ? Icons.close : Icons.add,
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -52,8 +56,19 @@ class _AppShellState extends State<AppShell> {
     switch (page) {
       case AppPage.profile:
         return const ProfilePage();
+      case AppPage.addPost:
+        return const PostFormPage();
       default:
         return const HomePage();
+    }
+  }
+
+  void _onTapFloatingActionButton() {
+    final cubit = context.read<AppCubit>();
+    if (cubit.state.page == AppPage.addPost) {
+      cubit.changePage(AppPage.home);
+    } else {
+      cubit.changePage(AppPage.addPost);
     }
   }
 }

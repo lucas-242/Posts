@@ -50,6 +50,36 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
+  /// `Add`
+  String get add {
+    return Intl.message(
+      'Add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Post`
+  String get addPost {
+    return Intl.message(
+      'Add Post',
+      name: 'addPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Author`
+  String get author {
+    return Intl.message(
+      'Author',
+      name: 'author',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `By`
   String get by {
     return Intl.message(
@@ -70,6 +100,26 @@ class AppLocalizations {
     );
   }
 
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Post`
+  String get editPost {
+    return Intl.message(
+      'Edit Post',
+      name: 'editPost',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `English`
   String get english {
     return Intl.message(
@@ -80,11 +130,31 @@ class AppLocalizations {
     );
   }
 
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Error to load data from the API :(`
   String get errorToLoadData {
     return Intl.message(
       'Error to load data from the API :(',
       name: 'errorToLoadData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Field`
+  String get field {
+    return Intl.message(
+      'Field',
+      name: 'field',
       desc: '',
       args: [],
     );
@@ -115,6 +185,46 @@ class AppLocalizations {
     return Intl.message(
       'Come back for us :)',
       name: 'inactivityBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{property} is Empty`
+  String isEmpty(String property) {
+    return Intl.message(
+      '$property is Empty',
+      name: 'isEmpty',
+      desc: '',
+      args: [property],
+    );
+  }
+
+  /// `Please, inform a valid number`
+  String get invalidNumber {
+    return Intl.message(
+      'Please, inform a valid number',
+      name: 'invalidNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Post`
+  String get newPost {
+    return Intl.message(
+      'New Post',
+      name: 'newPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, inform a number equal or greater than 0`
+  String get numberLesserThanZero {
+    return Intl.message(
+      'Please, inform a number equal or greater than 0',
+      name: 'numberLesserThanZero',
       desc: '',
       args: [],
     );
@@ -160,6 +270,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select a Language`
   String get selectLanguage {
     return Intl.message(
@@ -175,6 +295,16 @@ class AppLocalizations {
     return Intl.message(
       'Take a Picture',
       name: 'takePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get title {
+    return Intl.message(
+      'Title',
+      name: 'title',
       desc: '',
       args: [],
     );

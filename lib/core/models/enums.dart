@@ -2,7 +2,8 @@ enum AppLanguage { en, pt }
 
 enum AppPage {
   home(0),
-  profile(1);
+  profile(1),
+  addPost(2);
 
   const AppPage(this.value);
 

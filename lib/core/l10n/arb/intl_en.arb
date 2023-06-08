@@ -1,16 +1,36 @@
 {
+  "add": "Add",
+  "addPost": "Add Post",
+  "author": "Author",
   "by": "By",
   "comments": "Comments",
+  "date": "Date",
+  "editPost": "Edit Post",
   "english": "English",
+  "error": "Error",
   "errorToLoadData": "Error to load data from the API :(",
+  "field": "Field",
   "home": "Home",
   "inactivityTitle": "You are inactive",
   "inactivityBody": "Come back for us :)",
+  "isEmpty": "{property} is Empty",
+  "@isEmpty": {
+    "placeholders": {
+        "property": {
+          "type": "String"
+        }
+    }
+  },
+  "invalidNumber": "Please, inform a valid number",
+  "newPost": "New Post",
+  "numberLesserThanZero": "Please, inform a number equal or greater than 0",
   "languages": "languages",
   "listsOfPosts": "List of Posts",
   "profile": "Profile",
   "portuguese": "Portuguese",
+  "save": "Save",
   "selectLanguage": "Select a Language",
   "takePicture": "Take a Picture",
+  "title": "Title",
   "upvotes": "Upvotes"
 }

@@ -15,19 +15,19 @@ final class RedditPostRepository implements PostRepository {
   }
 
   @override
-  Future<Post> create() {
+  Future<Post> create(Post post) {
     // TODO: implement create
     throw UnimplementedError();
   }
 
   @override
-  Future<void> delete() {
+  Future<void> delete(int id) {
     // TODO: implement delete
     throw UnimplementedError();
   }
 
   @override
-  Future<void> update() {
+  Future<void> update(Post post) {
     // TODO: implement update
     throw UnimplementedError();
   }
