@@ -11,7 +11,7 @@ abstract class PostFormState extends Equatable {
 }
 
 final class PostFormInitialState extends PostFormState {
-  PostFormInitialState() : super(post: _defaultPost);
+  PostFormInitialState({Post? post}) : super(post: post ?? _defaultPost);
 }
 
 final class PostFormSuccessState extends PostFormState {

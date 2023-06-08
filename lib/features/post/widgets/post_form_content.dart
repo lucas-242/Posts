@@ -39,7 +39,7 @@ class _PostFormContentState extends State<PostFormContent> {
     final cubit = context.read<PostFormCubit>();
     _dateController = MaskedTextController(
       text: DateFormat.yMd().format(cubit.state.post.created).normalizeDate(),
-      mask: '00/00/0000 00:00:00',
+      mask: '00/00/0000',
     );
     super.initState();
   }

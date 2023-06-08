@@ -13,4 +13,22 @@ final class Post {
   final int ups;
   final int commentsQuantity;
   final DateTime created;
+
+  Post copyWith({
+    int? id,
+    String? title,
+    String? author,
+    int? ups,
+    int? commentsQuantity,
+    DateTime? created,
+  }) {
+    return Post(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      author: author ?? this.author,
+      ups: ups ?? this.ups,
+      commentsQuantity: commentsQuantity ?? this.commentsQuantity,
+      created: created ?? this.created,
+    );
+  }
 }

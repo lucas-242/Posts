@@ -41,9 +41,12 @@ class PostFormCubit extends Cubit<PostFormState> with FormValidator {
     emit(PostFormSuccessState());
   }
 
-  onChangePostAuthor(String value) {}
+  void onChangePostAuthor(String author) =>
+      emit(PostFormInitialState(post: state.post.copyWith(author: author)));
 
-  onChangePostTitle(String value) {}
+  void onChangePostTitle(String title) =>
+      emit(PostFormInitialState(post: state.post.copyWith(title: title)));
 
-  void onChangePostDate(DateTime date) {}
+  void onChangePostDate(DateTime date) =>
+      emit(PostFormInitialState(post: state.post.copyWith(created: date)));
 }
