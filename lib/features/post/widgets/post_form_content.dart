@@ -55,7 +55,7 @@ class _PostFormContentState extends State<PostFormContent> {
     _dateController.text = DateFormat.yMd().format(date).normalizeDate();
   }
 
-  bool _isCreating(Post? post) => post == null || post.id == 0;
+  bool _isCreating(Post? post) => post == null || post.id == -1;
 
   @override
   Widget build(BuildContext context) {

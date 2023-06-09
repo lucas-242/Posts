@@ -1,6 +1,6 @@
 class Post {
   Post({
-    this.id = 0,
+    this.id = -1,
     required this.title,
     required this.author,
     required this.ups,

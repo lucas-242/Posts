@@ -19,7 +19,7 @@ class PostFormPage extends StatefulWidget {
 }
 
 class _PostFormPageState extends State<PostFormPage> {
-  bool isCreating(Post? post) => post == null || post.id == 0;
+  bool isCreating(Post? post) => post == null || post.id == -1;
 
   void onConfirm(Post post) {
     if (isCreating(post)) {
