@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reddit_posts/core/models/enums.dart';
 import 'package:reddit_posts/core/models/post.dart';
 import 'package:reddit_posts/core/widgets/custom_safe_area/custom_safe_area.dart';
 import 'package:reddit_posts/core/widgets/custom_snack_bar/custom_snack_bar.dart';
 import 'package:reddit_posts/core/widgets/loading/loading.dart';
+import 'package:reddit_posts/features/app_cubit.dart';
 import 'package:reddit_posts/features/post/cubit/post_form_cubit.dart';
 import 'package:reddit_posts/features/post/widgets/post_form_content.dart';
 
@@ -40,7 +42,7 @@ class _PostFormPageState extends State<PostFormPage> {
               //   context,
               //   MaterialPageRoute(builder: (_) => const HomePage()),
               // );
-              Navigator.pop(context);
+              context.read<AppCubit>().changePage(AppPage.home);
             } else if (state is PostFormErrorState) {
               getCustomSnackBar(
                 context,
