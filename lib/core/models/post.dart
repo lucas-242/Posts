@@ -1,4 +1,4 @@
-final class Post {
+class Post {
   Post({
     this.id = 0,
     required this.title,
