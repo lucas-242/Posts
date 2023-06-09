@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:reddit_posts/core/extensions/extensions.dart';
 import 'package:reddit_posts/core/l10n/generated/l10n.dart';
 import 'package:reddit_posts/core/models/enums.dart';
+import 'package:reddit_posts/core/models/post.dart';
 import 'package:reddit_posts/core/themes/themes.dart';
 import 'package:reddit_posts/core/widgets/back_and_pill/back_and_pill.dart';
 import 'package:reddit_posts/core/widgets/custom_date_picker/custom_date_picker.dart';
@@ -17,10 +18,8 @@ class PostFormContent extends StatefulWidget {
   const PostFormContent({
     super.key,
     required this.onConfirm,
-    this.isCreating = true,
   });
   final Function() onConfirm;
-  final bool isCreating;
 
   @override
   State<PostFormContent> createState() => _PostFormContentState();
@@ -56,6 +55,8 @@ class _PostFormContentState extends State<PostFormContent> {
     _dateController.text = DateFormat.yMd().format(date).normalizeDate();
   }
 
+  bool _isCreating(Post? post) => post == null || post.id == 0;
+
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<PostFormCubit>();
@@ -63,7 +64,7 @@ class _PostFormContentState extends State<PostFormContent> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         BackAndPill(
-          text: widget.isCreating
+          text: _isCreating(cubit.state.post)
               ? AppLocalizations.current.newPost
               : AppLocalizations.current.editPost,
           onTapBack: () {
@@ -78,6 +79,7 @@ class _PostFormContentState extends State<PostFormContent> {
               CustomTextFormField(
                 textFormKey: _titleKey,
                 labelText: AppLocalizations.current.title,
+                initialValue: cubit.state.post.title,
                 onChanged: (value) => cubit.onChangePostTitle(value),
                 validator: (value) => cubit.validateTextField(
                   value,

@@ -37,11 +37,6 @@ class _PostFormPageState extends State<PostFormPage> {
           listenWhen: (previous, current) => previous != current,
           listener: (context, state) {
             if (state is PostFormSuccessState) {
-              // context.read<PostLandingCubit>().onChangeServices();
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (_) => const HomePage()),
-              // );
               context.read<AppCubit>().changePage(AppPage.home);
             } else if (state is PostFormErrorState) {
               getCustomSnackBar(
@@ -57,7 +52,6 @@ class _PostFormPageState extends State<PostFormPage> {
               }
 
               return PostFormContent(
-                isCreating: isCreating(widget.post),
                 onConfirm: () => onConfirm(state.post),
               );
             },

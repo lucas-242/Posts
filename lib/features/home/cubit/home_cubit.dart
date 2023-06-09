@@ -11,6 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> onInit() async {
     try {
+      emit(HomeLoadingState());
       final result = await _getPosts();
       emit(HomeSuccessState(posts: result));
     } catch (exception) {
@@ -27,6 +28,17 @@ class HomeCubit extends Cubit<HomeState> {
       emit(HomeSuccessState(posts: result));
     } catch (exception) {
       emit(HomeErrorState(error: exception.toString()));
+    }
+  }
+
+  Future<void> delete(int id) async {
+    try {
+      emit(HomeLoadingState());
+      await _postRepository.delete(id);
+      final result = await _getPosts();
+      emit(HomeSuccessState(posts: result));
+    } catch (exception) {
+      emit(HomeErrorState(posts: state.posts, error: exception.toString()));
     }
   }
 }
