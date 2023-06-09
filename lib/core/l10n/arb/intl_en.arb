@@ -22,10 +22,11 @@
     }
   },
   "invalidNumber": "Please, inform a valid number",
-  "newPost": "New Post",
-  "numberLesserThanZero": "Please, inform a number equal or greater than 0",
   "languages": "languages",
   "listsOfPosts": "List of Posts",
+  "myPosts": "My Posts",
+  "newPost": "New Post",
+  "numberLesserThanZero": "Please, inform a number equal or greater than 0",
   "profile": "Profile",
   "portuguese": "Portuguese",
   "save": "Save",

@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "isEmpty": m0,
         "languages": MessageLookupByLibrary.simpleMessage("languages"),
         "listsOfPosts": MessageLookupByLibrary.simpleMessage("List of Posts"),
+        "myPosts": MessageLookupByLibrary.simpleMessage("My Posts"),
         "newPost": MessageLookupByLibrary.simpleMessage("New Post"),
         "numberLesserThanZero": MessageLookupByLibrary.simpleMessage(
             "Please, inform a number equal or greater than 0"),

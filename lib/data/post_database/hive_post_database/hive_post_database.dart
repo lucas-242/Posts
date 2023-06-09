@@ -10,7 +10,7 @@ final class HivePostDatabase implements PostDatabase {
   @override
   Future<void> create(Post post) async {
     final postsBox = await _openBox();
-    return postsBox.put(post.id, post as PostHive);
+    return postsBox.put(post.id, PostHive.fromPost(post));
   }
 
   @override
@@ -22,13 +22,13 @@ final class HivePostDatabase implements PostDatabase {
   @override
   Future<List<Post>> get() async {
     final postsBox = await _openBox();
-    return postsBox.values.toList();
+    return postsBox.values.toList().reversed.toList();
   }
 
   @override
   Future<void> update(Post post) async {
     final postsBox = await _openBox();
-    return postsBox.putAt(post.id, post as PostHive);
+    return postsBox.putAt(post.id, PostHive.fromPost(post));
   }
 
   Future<Box<PostHive>> _openBox() async {

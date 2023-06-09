@@ -36,7 +36,11 @@ class _PostFormPageState extends State<PostFormPage> {
           listener: (context, state) {
             if (state is PostFormSuccessState) {
               // context.read<PostLandingCubit>().onChangeServices();
-              // context.pop();
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (_) => const HomePage()),
+              // );
+              Navigator.pop(context);
             } else if (state is PostFormErrorState) {
               getCustomSnackBar(
                 context,

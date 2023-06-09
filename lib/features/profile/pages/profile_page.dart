@@ -57,7 +57,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       onPressed: () async {
                         final cameras = await availableCameras();
                         if (!mounted) return;
-                        Navigator.of(context).push(
+                        Navigator.push(
+                          context,
                           MaterialPageRoute(
                             builder: (_) => CameraPage(
                               camera: cameras.first,

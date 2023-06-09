@@ -6,6 +6,7 @@ class Post {
     required this.ups,
     required this.commentsQuantity,
     required this.created,
+    this.isLocal = false,
   });
   final int id;
   final String title;
@@ -13,6 +14,7 @@ class Post {
   final int ups;
   final int commentsQuantity;
   final DateTime created;
+  final bool isLocal;
 
   Post copyWith({
     int? id,
@@ -21,6 +23,7 @@ class Post {
     int? ups,
     int? commentsQuantity,
     DateTime? created,
+    bool? isLocal,
   }) {
     return Post(
       id: id ?? this.id,
@@ -29,6 +32,7 @@ class Post {
       ups: ups ?? this.ups,
       commentsQuantity: commentsQuantity ?? this.commentsQuantity,
       created: created ?? this.created,
+      isLocal: isLocal ?? this.isLocal,
     );
   }
 }

@@ -210,26 +210,6 @@ class AppLocalizations {
     );
   }
 
-  /// `New Post`
-  String get newPost {
-    return Intl.message(
-      'New Post',
-      name: 'newPost',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please, inform a number equal or greater than 0`
-  String get numberLesserThanZero {
-    return Intl.message(
-      'Please, inform a number equal or greater than 0',
-      name: 'numberLesserThanZero',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `languages`
   String get languages {
     return Intl.message(
@@ -245,6 +225,36 @@ class AppLocalizations {
     return Intl.message(
       'List of Posts',
       name: 'listsOfPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Posts`
+  String get myPosts {
+    return Intl.message(
+      'My Posts',
+      name: 'myPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Post`
+  String get newPost {
+    return Intl.message(
+      'New Post',
+      name: 'newPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, inform a number equal or greater than 0`
+  String get numberLesserThanZero {
+    return Intl.message(
+      'Please, inform a number equal or greater than 0',
+      name: 'numberLesserThanZero',
       desc: '',
       args: [],
     );

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:reddit_posts/core/connections/connection.dart';
+import 'package:reddit_posts/core/connections/models/connection_response.dart';
 import 'package:reddit_posts/core/models/post.dart';
 import 'package:reddit_posts/data/post_database/post_database.dart';
 import 'package:reddit_posts/repositories/post_repository/post_repository.dart';
@@ -14,18 +15,28 @@ final class RedditPostRepository implements PostRepository {
 
   @override
   Future<List<Post>> get() async {
-    final response = await _connection.get(_apiUrl);
-    return RedditResponse.fromJson(response.json).data.posts;
+    final response = await Future.wait([
+      _connection.get(_apiUrl),
+      _getLocal(),
+    ]);
+
+    final onlinePosts =
+        RedditResponse.fromJson((response[0] as ConnectionResponse).json)
+            .data
+            .posts;
+
+    final localPosts = response[1] as List<Post>;
+
+    return [...onlinePosts, ...localPosts];
   }
 
-  @override
-  Future<List<Post>> getLocal() async => _database.get();
+  Future<List<Post>> _getLocal() async => _database.get();
 
   @override
   Future<Post> create(Post post) async {
-    final posts = await getLocal();
+    final posts = await _getLocal();
     final lastId = posts.isEmpty ? -1 : posts.map((e) => e.id).fold(0, max);
-    final toCreate = post.copyWith(id: lastId);
+    final toCreate = post.copyWith(id: lastId + 1, isLocal: true);
     await _database.create(toCreate);
     return toCreate;
   }

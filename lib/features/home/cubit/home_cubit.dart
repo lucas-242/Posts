@@ -18,6 +18,8 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
+  Future<List<Post>> _getPosts() async => _postRepository.get();
+
   Future<void> onRefresh() async {
     try {
       emit(HomeLoadingState());
@@ -27,6 +29,4 @@ class HomeCubit extends Cubit<HomeState> {
       emit(HomeErrorState(error: exception.toString()));
     }
   }
-
-  Future<List<Post>> _getPosts() async => _postRepository.get();
 }
